@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+			function createA(){
+				div=document.getElementById("div1")
+				newchild = document.createElement("a");
+				div.appendChild(newchild);
+				newchild.innerHTML = "<br />"+"A";
+				newchild.style.color="yellow";
+				newchild.style.backgroundColor="red";
+				}
+			function deleteA(){
+				x=document.getElementById("div1");
+				y=x.childNodes;
+				z=y.length-1;
+				for( i=z;i>=0;i--){
+				if(y[i].tagName=="A")x.removeChild(y[i]);
+				}
+				}
+			function deleteP(){
+				x=document.getElementById("div1");
+				y=x.childNodes;
+				z=y.length-1;
+				for(i=z;i>=0;i--){
+					if(y[i].tagName=="P")x.removeChild(y[i]);
+				}
+				}
+			function change(){
+			    m=document.getElementById("div1");
+			    n=m.childNodes;
+			    z=n.length-1;
+				for(i=z;i>=0;i--){			
+					if(n[i].tagName=="P"||n[i].tagName=="A")
+					n[i].style.backgroundColor="red";
+			}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1" style="border: 1px solid black; ">
+			<p>p1</p>
+			<a href="#">a1</a><br />
+			<p>p2</p>
+			<a href="#">a2</a><br />
+			<a href="#">a3</a>
+		</div>
+			<button onclick="createA()">增加一个A元素</button>
+			<button onclick="deleteA()()">删除所有A元素</button>
+			<button onclick="deleteP()">删除所有P元素</button>
+			<button onclick="change()">将所有元素背景色变为红色</button>
+	</body>
+</html>
